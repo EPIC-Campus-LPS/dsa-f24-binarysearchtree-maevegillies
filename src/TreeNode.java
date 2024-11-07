@@ -1,3 +1,4 @@
+import com.sun.source.tree.Tree;
 
 /**
  * A class representing a node in a binary tree
@@ -68,4 +69,15 @@ public class TreeNode<E extends Comparable<E>> {
         value = val;
     }
 
+    /**
+     * Compares the values of this node to another node
+     * Returns 0 if the two are equal
+     * Returns a negative number if value is less than the given node
+     * Returns a positive number if it is greater than the given node
+     * @param node the node to compare the current node to
+     * @return the numerical value of the comparsion between the two nodes
+     */
+    public int compareTo(TreeNode<E> node){
+        return value.compareTo(node.getValue());
+    }
 }
