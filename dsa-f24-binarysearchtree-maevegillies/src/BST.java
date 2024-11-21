@@ -10,8 +10,12 @@ public class BST {
         TreeNode newNode = new TreeNode((Comparable) value, null, null);
         TreeNode currNode = root;
 
+        if (size == 0) {
+            root = newNode;
+            size++;
+        }
 
-        while(!newNode.getLeftChild().equals(null) && !newNode.getRightChild().equals(null)) {
+        while(!(newNode.getLeftChild() == null) && !(newNode.getRightChild() == null)) {
             if(newNode.getValue().compareTo(currNode.getValue()) <= 0) {
                 currNode = currNode.getLeftChild();
                 //move currNode to the left of the key
@@ -20,6 +24,15 @@ public class BST {
                 //move currNode to the right of the key
                 currNode = currNode.getRightChild();
             }
+        }
+
+        if (newNode.getValue().compareTo(currNode.getValue()) <= 0) {
+            currNode.setLeftChild(newNode);
+            size++;
+        }
+        else if (newNode.getValue().compareTo(currNode.getValue()) > 0) {
+            currNode.setRightChild(newNode);
+            size++;
         }
 
             //add a node to the tree
@@ -31,11 +44,13 @@ public class BST {
     }
 
     public int countNodes() {
-        //returns the number of nodes in the tree
-        return 0;
+        return size;
     }
 
     public int countLeafNodes() {
+
+
+
         //returns the number of leaf nodes in tree
         return 0;
 
@@ -46,12 +61,29 @@ public class BST {
         return 0;
     }
 
-    public void printInorder() {
+    public String printInorder() {
+        //
+        return helperIn(root);
+
+
+
+    }
+    public String helperIn(TreeNode currNode) {
+
+        //iterate through the left subtree
+        //then go up and over the right
+        //then count the root
+        //then do the right subtree
+
+
+
+
+
 
     }
 
     public void printPreorder() {
-
+        //
     }
 
     public void printPostorder() {
@@ -59,7 +91,7 @@ public class BST {
     }
 
     public <E> E delete(E value) {
-
+        return null;
     }
 
 
