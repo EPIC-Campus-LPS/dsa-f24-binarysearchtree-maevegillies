@@ -1,11 +1,14 @@
 public class Main {
     public static void main(String[] args) {
         BST tree = new BST();
-        tree.add(10);
-        tree.add(20);
-        tree.add(30);
-        tree.add(25);
-        tree.add(45);
+        tree.add(3);
+        tree.add(4);
+        tree.add(1);
+        tree.add(14);
+        tree.add(12);
+
+
+        tree.printInorder();
 
 
 
