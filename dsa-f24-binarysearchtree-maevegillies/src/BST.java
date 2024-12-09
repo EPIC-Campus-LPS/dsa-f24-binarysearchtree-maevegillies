@@ -64,58 +64,44 @@ public class BST {
     }
 
     public int countNodes(TreeNode currNode) {
-        TreeNode left = currNode.getLeftChild();
-        TreeNode right = currNode.getRightChild();
+        return 0;
 
-        while (currNode == null) {
-
-        }
-
-
-
-        if (root == null) {
-            return 0;
-        }
-        else {
-            return 1 + right;
-        }
 
     }
 
-    public int countLeafNodes() {
-        //if a node's left and right is null then add one to the counter
-        //go through entire tree and check for if the left and right is null
+    public int countLeafNodes(TreeNode currNode) {
+        //if left and right vhild are null then count up
+        currNode = root;
 
-        if (root == null) {
-            return 0;
+        if (currNode.getLeftChild() == null && currNode.getRightChild() == null) {
+            return 1;
         }
 
+        //if just left
+        //if just right
 
 
 
-        //returns the number of leaf nodes in tree
-        return 0;
 
     }
 
     public int getHeight() {
+        return helperHeight(root) - 1;
         //returns the longest path from the root to a leaf node
 
 
-        return 0;
     }
     public int helperHeight(TreeNode currNode) {
-        return 0;
-//
-//        int leftTree = helperHeight(currNode.getLeftChild());
-//        int rightTree = helperHeight(currNode.getRightChild());
-//
-//        if (root == null) {
-//            return 0;
-//        }
-//        else {
-//            return 1;
-//        }
+
+        if (currNode.getLeftChild() != null && currNode.getRightChild() != null) {
+            return Math.max(helperHeight(currNode.getLeftChild()), helperHeight(currNode.getRightChild()) + 1);
+        } else if (currNode.getRightChild() != null) {
+            return 1 + helperHeight(currNode.getRightChild());
+        } else if (currNode.getLeftChild() != null) {
+            return 1 + helperHeight(currNode.getLeftChild());
+        } else {
+            return 1;
+        }
     }
 
     public void printInorder() {

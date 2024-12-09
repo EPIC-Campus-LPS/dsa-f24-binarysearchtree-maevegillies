@@ -6,7 +6,7 @@ public class Main {
         tree.add(1);
         tree.add(14);
         tree.add(12);
-
+        System.out.println(tree.getHeight());
 
         tree.printInorder();
 
